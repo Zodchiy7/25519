@@ -7,9 +7,9 @@
 //
 
 #import "Ed25519.h"
-#import "Curve25519.h"
+#import "Curve25519Channels.h"
 
-@interface ECKeyPair ()
+@interface ECKeyPairChannels ()
 -(NSData*) sign:(NSData*)data;
 @end
 
@@ -19,7 +19,7 @@ extern int curve25519_verify(const unsigned char* signature, /* 64 bytes */
 
 @implementation Ed25519
 
-+(NSData*)sign:(NSData*)data withKeyPair:(ECKeyPair*)keyPair{
++(NSData*)sign:(NSData*)data withKeyPair:(ECKeyPairChannels*)keyPair{
     
     if ([data length] < 1) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Data needs to be at least one byte" userInfo:nil];

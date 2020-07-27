@@ -1,12 +1,12 @@
 //
-//  Curve25519.m
+//  Curve25519Channels.m
 //  BuildTests
 //
 //  Created by Frederic Jacobs on 22/07/14.
 //  Copyright (c) 2014 Open Whisper Systems. All rights reserved.
 //
 
-#import "Curve25519.h"
+#import "Curve25519Channels.h"
 #import "Randomness.h"
 #import "ge.h"
 #import "crypto_hash_sha512.h"
@@ -23,7 +23,7 @@ extern int  curve25519_sign(unsigned char* signature_out, /* 64 bytes */
                      const unsigned char* msg, const unsigned long msg_len,
                      const unsigned char* random); /* 64 bytes */
 
-@implementation ECKeyPair
+@implementation ECKeyPairChannels
 
 + (BOOL)supportsSecureCoding{
     return YES;
@@ -57,9 +57,9 @@ extern int  curve25519_sign(unsigned char* signature_out, /* 64 bytes */
 }
 
 
-+(ECKeyPair*)generateKeyPair{
++(ECKeyPairChannels*)generateKeyPair{
     
-    ECKeyPair* keyPair = [[ECKeyPair alloc] init];
+    ECKeyPairChannels* keyPair = [[ECKeyPairChannels alloc] init];
     
     // Generate key pair as described in https://code.google.com/p/curve25519-donna/
     memcpy(keyPair->privateKey, [[Randomness  generateRandomBytes:ECCKeyLength] bytes], ECCKeyLength);
@@ -73,9 +73,9 @@ extern int  curve25519_sign(unsigned char* signature_out, /* 64 bytes */
     return keyPair;
 }
 
-+(ECKeyPair*)generateKeyPairBySeed:(unsigned char*)seed {
++(ECKeyPairChannels*)generateKeyPairBySeed:(unsigned char*)seed {
     
-    ECKeyPair* keyPair = [[ECKeyPair alloc] init];
+    ECKeyPairChannels* keyPair = [[ECKeyPairChannels alloc] init];
     
     unsigned char hash[64];
     crypto_hash_sha512(hash, seed, ECCKeyLength);
@@ -136,17 +136,17 @@ extern int  curve25519_sign(unsigned char* signature_out, /* 64 bytes */
 
 @end
 
-@implementation Curve25519
+@implementation Curve25519Channels
 
-+(ECKeyPair*)generateKeyPair{
-    return [ECKeyPair generateKeyPair];
++(ECKeyPairChannels*)generateKeyPair{
+    return [ECKeyPairChannels generateKeyPair];
 }
 
-+(ECKeyPair*)generateKeyPairBySeed:(unsigned char*)seed {
-    return [ECKeyPair generateKeyPairBySeed:seed];
++(ECKeyPairChannels*)generateKeyPairBySeed:(unsigned char*)seed {
+    return [ECKeyPairChannels generateKeyPairBySeed:seed];
 }
 
-+(NSData*)generateSharedSecretFromPublicKey:(NSData *)theirPublicKey andKeyPair:(ECKeyPair *)keyPair{
++(NSData*)generateSharedSecretFromPublicKey:(NSData *)theirPublicKey andKeyPair:(ECKeyPairChannels *)keyPair{
     return [keyPair generateSharedSecretFromPublicKey:theirPublicKey];
 }
 

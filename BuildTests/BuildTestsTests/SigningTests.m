@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "Curve25519.h"
+#import "Curve25519Channels.h"
 #import "Randomness.h"
 #import "Ed25519.h"
 
@@ -32,7 +32,7 @@
     for (int i = 1; i < 1000; i++) {
         for (int j = 0; j < 3; j++) {
             
-            ECKeyPair *key = [Curve25519 generateKeyPair];
+            ECKeyPairChannels *key = [Curve25519Channels generateKeyPair];
             
             NSData *data = [Randomness generateRandomBytes:i];
             
@@ -50,7 +50,7 @@
 - (void)testingIdentityKeyStyle{
     for (int i = 0; i < 10000; i++) {
         
-        ECKeyPair *key = [Curve25519 generateKeyPair];
+        ECKeyPairChannels *key = [Curve25519Channels generateKeyPair];
         
         NSData *data = [Randomness generateRandomBytes:32];
         

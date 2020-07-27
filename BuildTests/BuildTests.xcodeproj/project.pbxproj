@@ -65,7 +65,7 @@
 		B6EC0975197F559E0070F844 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EC095D197F559E0070F844 /* UIKit.framework */; };
 		B6EC097D197F559E0070F844 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6EC097B197F559E0070F844 /* InfoPlist.strings */; };
 		B6EC09DA197F55B90070F844 /* curve25519-donna.c in Sources */ = {isa = PBXBuildFile; fileRef = B6EC0989197F55B90070F844 /* curve25519-donna.c */; settings = {COMPILER_FLAGS = "-w"; }; };
-		B6EC0A0B197F55E70070F844 /* Curve25519.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EC0A0A197F55E70070F844 /* Curve25519.m */; };
+		B6EC0A0B197F55E70070F844 /* Curve25519Channels.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EC0A0A197F55E70070F844 /* Curve25519Channels.m */; };
 		B6EC0A0E197F5B1E0070F844 /* Randomness.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EC0A0D197F5B1E0070F844 /* Randomness.m */; };
 		B6EC0B0F197F652A0070F844 /* Ed25519.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EC0B0E197F652A0070F844 /* Ed25519.m */; };
 /* End PBXBuildFile section */
@@ -174,8 +174,8 @@
 		B6EC097A197F559E0070F844 /* BuildTestsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BuildTestsTests-Info.plist"; sourceTree = "<group>"; };
 		B6EC097C197F559E0070F844 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B6EC0989197F55B90070F844 /* curve25519-donna.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "curve25519-donna.c"; sourceTree = "<group>"; };
-		B6EC0A09197F55E70070F844 /* Curve25519.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Curve25519.h; path = ../../Classes/Curve25519.h; sourceTree = "<group>"; };
-		B6EC0A0A197F55E70070F844 /* Curve25519.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Curve25519.m; path = ../../Classes/Curve25519.m; sourceTree = "<group>"; };
+		B6EC0A09197F55E70070F844 /* Curve25519Channels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Curve25519Channels.h; path = ../../Classes/Curve25519Channels.h; sourceTree = "<group>"; };
+		B6EC0A0A197F55E70070F844 /* Curve25519Channels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Curve25519Channels.m; path = ../../Classes/Curve25519Channels.m; sourceTree = "<group>"; };
 		B6EC0A0C197F5B1E0070F844 /* Randomness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Randomness.h; path = ../../Classes/Randomness.h; sourceTree = "<group>"; };
 		B6EC0A0D197F5B1E0070F844 /* Randomness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Randomness.m; path = ../../Classes/Randomness.m; sourceTree = "<group>"; };
 		B6EC0B0D197F652A0070F844 /* Ed25519.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ed25519.h; path = ../../Classes/Ed25519.h; sourceTree = "<group>"; };
@@ -415,8 +415,8 @@
 		B6EC0A10197F5D090070F844 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B6EC0A09197F55E70070F844 /* Curve25519.h */,
-				B6EC0A0A197F55E70070F844 /* Curve25519.m */,
+				B6EC0A09197F55E70070F844 /* Curve25519Channels.h */,
+				B6EC0A0A197F55E70070F844 /* Curve25519Channels.m */,
 				B6EC0B0D197F652A0070F844 /* Ed25519.h */,
 				B6EC0B0E197F652A0070F844 /* Ed25519.m */,
 				B6EC0A0C197F5B1E0070F844 /* Randomness.h */,
@@ -482,6 +482,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = B6EC094D197F559E0070F844;
@@ -549,7 +550,7 @@
 				B62C865419CEEA9D00DCA580 /* sc_muladd.c in Sources */,
 				B62C864719CEEA9D00DCA580 /* ge_p3_0.c in Sources */,
 				B62C863619CEEA9D00DCA580 /* fe_isnonzero.c in Sources */,
-				B6EC0A0B197F55E70070F844 /* Curve25519.m in Sources */,
+				B6EC0A0B197F55E70070F844 /* Curve25519Channels.m in Sources */,
 				B62C864819CEEA9D00DCA580 /* ge_p3_dbl.c in Sources */,
 				B62C863919CEEA9D00DCA580 /* fe_pow22523.c in Sources */,
 				B62C864219CEEA9D00DCA580 /* ge_msub.c in Sources */,

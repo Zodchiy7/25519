@@ -8,7 +8,7 @@
 
 #import "Randomness.h"
 #import "Ed25519.h"
-#import "Curve25519.h"
+#import "Curve25519Channels.h"
 #import "AppDelegate.h"
 
 @implementation AppDelegate

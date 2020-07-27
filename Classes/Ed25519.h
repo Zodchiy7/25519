@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ECKeyPair;
+@class ECKeyPairChannels;
 
 @interface Ed25519 : NSObject
 
@@ -20,7 +20,7 @@
  *  @return The ed25519 64-bytes signature.
  */
 
-+(NSData*)sign:(NSData*)data withKeyPair:(ECKeyPair*)keyPair;
++(NSData*)sign:(NSData*)data withKeyPair:(ECKeyPairChannels*)keyPair;
 
 /**
  *  Verify ed25519 signature with 32-bytes Curve25519 key pair. Throws an NSInvalid
